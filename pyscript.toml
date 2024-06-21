@@ -1,0 +1,4 @@
+name = "Flag quiz"
+[files]
+"./data/nations.csv" = "nations.csv"
+

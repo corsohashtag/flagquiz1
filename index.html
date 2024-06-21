@@ -9,7 +9,7 @@
     </head>
     <body>
         <h1>Flag quiz</h1>
-        <button id="loading-button" class="btn btn-primary" type="button" disabled="">
+        <button id="loading-button" class="btn btn-primary" disabled="">
             <span class="spinner-border spinner-border-sm" aria-hidden="true"></span>
             <span role="status">Loading...</span>
         </button>
@@ -17,14 +17,14 @@
             <div id="flag-container">
                 <img src="" id="flag-image" />
                 <div class="answers">
-                    <button id="button-answer1" type="button" py-click="answer_button_click" class="btn btn-outline-secondary" />
-                    <button id="button-answer2" type="button" py-click="answer_button_click" class="btn btn-outline-secondary" />
-                    <button id="button-answer3" type="button" py-click="answer_button_click" class="btn btn-outline-secondary" />
+                    <button id="button-answer1" py-click="check_answer" class="btn btn-outline-secondary" />
+                    <button id="button-answer2" py-click="check_answer" class="btn btn-outline-secondary" />
+                    <button id="button-answer3" py-click="check_answer" class="btn btn-outline-secondary" />
                 </div>
             </div>
             <div id="message-container">
                 <img src="" id="message-img" />
-                <span id="message-text"></span>
+                <span id="message-text"></span><br />
                 <button id="button-play" py-click="play" class="btn btn-primary">Riprova!</button>
             </div>
         </div>

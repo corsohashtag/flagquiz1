@@ -1,0 +1,51 @@
+body {
+    margin: 10px;
+}
+
+h1 {
+    background-image: linear-gradient(lightblue, lightblue);
+    background-size: 100% 7px;
+    background-repeat: no-repeat;
+}
+
+.answers button {
+    width: 150px;
+    margin-right: 10px;
+}
+
+.btn-outline-primary:disabled {
+    border-width: 1px;
+    color:cornflowerblue;
+    background-color:ghostwhite
+}
+
+#main-container {
+    display: none;
+}
+
+#flag-container {
+    float: left;
+    margin-bottom: 10px;
+}
+
+#flag-image {
+    width: 200px;
+    padding: 4px;
+    border: 1px solid gray;
+    margin: 10px auto;
+    display: block;
+}
+
+#message-container {
+    clear: both;
+}
+
+#message-img {
+    width: 30px;
+    vertical-align: middle;
+}
+
+#button-play {
+    display: block;
+    margin-top: 10px;
+}

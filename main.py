@@ -9,7 +9,7 @@ select = document.querySelector  # Alias della funzione che seleziona elemento/i
 
 def set_answer_buttons(enabled):
     for i in (1, 2, 3):
-        target = select("#button-answer" + str(i))
+        target = select("#answer-button" + str(i))
         target.disabled = not enabled
 
 
@@ -36,7 +36,6 @@ def play(event=None):
 
     shuffle(nations)  # Mescola tutte le nazioni
     answers = nations[:3]  # Prende le prime tre nazioni come possibili risposte
-    answers = ["Brasile"] + nations[:2]
     to_guess = answers[0]  # Sceglie la prima come nazione estratta
     to_guess_filename = f"./images/flags/{to_guess.replace(' ', '_')}.png"
     select("#flag-image").src = to_guess_filename

@@ -1,5 +1,10 @@
-from pyscript import document, display
+from pyscript import document
 from random import shuffle
+
+
+nations = open("nations.csv", encoding="utf-8").readlines()
+to_guess = None  # Nome della nazione da indovinare
+select = document.querySelector  # Alias della funzione che seleziona elemento/i HTML
 
 
 def set_answer_buttons(enabled):
@@ -8,15 +13,15 @@ def set_answer_buttons(enabled):
         target.disabled = not enabled
 
 
-def answer_button_click(event):
+def check_answer(event):
     user_choice = event.srcElement  # Sorgente dell'evento, es, "button-answer1"
-    set_answer_buttons(enabled=False)
+    set_answer_buttons(False)
 
     if user_choice.innerText == to_guess:  # Controlla la scelta dell'utente
-        message = "Risposta esatta!"
+        message = f"Risposta esatta!\n{to_guess}!"
         icon_filename = "./images/true.svg"
     else:
-        message = f"Risposta sbagliata! La risposta esatta era {to_guess}"
+        message = f"Risposta sbagliata!\nLa risposta esatta era {to_guess}"
         icon_filename = "./images/false.svg"
 
     select("#message-text").innerText = message
@@ -31,6 +36,7 @@ def play(event=None):
 
     shuffle(nations)  # Mescola tutte le nazioni
     answers = nations[:3]  # Prende le prime tre nazioni come possibili risposte
+    answers = ["Brasile"] + nations[:2]
     to_guess = answers[0]  # Sceglie la prima come nazione estratta
     to_guess_filename = f"./images/flags/{to_guess.replace(' ', '_')}.png"
     select("#flag-image").src = to_guess_filename
@@ -44,7 +50,4 @@ def play(event=None):
     select("#main-container").style.display = "block"
 
 
-nations = open("nations.csv", encoding="utf-8").readlines()
-to_guess = None  # Nome della nazione da indovinare
-select = document.querySelector  # Alias della funzione che seleziona elemento/i HTML
 play()

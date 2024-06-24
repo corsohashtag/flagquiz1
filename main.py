@@ -43,7 +43,7 @@ def play(event=None):
     set_answer_buttons(enabled=True)  # Abilita tutti i pulsanti di risposta
 
     for i, nation in enumerate(answers):
-        select("#button-answer" + str(i + 1)).innerText = nation
+        select("#answer-button" + str(i + 1)).innerText = nation
 
     select("#loading-button").style.display = "none"
     select("#main-container").style.display = "block"

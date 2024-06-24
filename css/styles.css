@@ -7,11 +7,7 @@ h1 {
     background-image: linear-gradient(lightblue, lightblue);
     background-size: 100% 7px;
     background-repeat: no-repeat;
-}
-
-.answers button {
-    width: 150px;
-    margin-right: 10px;
+    font-size: 1.3rem;
 }
 
 .btn-outline-primary:disabled {
@@ -22,7 +18,15 @@ h1 {
 
 #main-container {
     display: none;
+}
+
+#answers-container {
     padding: 10px;
+}
+
+#answers-container button {
+    width: 120px;
+    margin: 5px 5px;
 }
 
 #flag-image {

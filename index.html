@@ -18,18 +18,19 @@
         <div id="main-container">
             <div id="flag-container">
                 <img src="" id="flag-image" />
-                <div class="answers">
-                    <button id="button-answer1" py-click="check_answer" class="btn btn-outline-secondary" />
-                    <button id="button-answer2" py-click="check_answer" class="btn btn-outline-secondary" />
-                    <button id="button-answer3" py-click="check_answer" class="btn btn-outline-secondary" />
+                <div id="answers-container">
+                    <button id="answer_button1" py-click="check_answer" class="btn btn-outline-secondary" />
+                    <button id="answer_button2" py-click="check_answer" class="btn btn-outline-secondary" />
+                    <button id="answer_button3" py-click="check_answer" class="btn btn-outline-secondary" />
                 </div>
             </div>
             <div id="message-container">
                 <img src="" id="message-img" />
                 <span id="message-text"></span><br />
-                <button id="button-play" py-click="play" class="btn btn-primary">Riprova!</button>
+                <button id="button-play" py-click="play" class="btn btn-primary">Nuovo quiz!</button>
             </div>
         </div>
         <script type="py" src="main.py" config="pyscript.toml"></script>
+        <!-- Codice Pyscript -->
     </body>
 </html>

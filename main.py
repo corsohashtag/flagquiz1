@@ -2,18 +2,20 @@ from pyscript import document
 from random import shuffle
 
 
+select = document.querySelector  # Alias della funzione che seleziona elemento/i HTML
 nations = open("nations.csv", encoding="utf-8").readlines()
 to_guess = None  # Nome della nazione da indovinare
-select = document.querySelector  # Alias della funzione che seleziona elemento/i HTML
 
 
 def set_answer_buttons(enabled):
+    """Abilita/disabilita i pulsanti di risposta."""
     for i in (1, 2, 3):
         target = select("#answer-button" + str(i))
         target.disabled = not enabled
 
 
 def check_answer(event):
+    """Controlla se l'utente ha premuto sul pulsante corretto e un messaggio di feedback."""
     user_choice = event.srcElement  # Sorgente dell'evento, es, "button-answer1"
     set_answer_buttons(False)
 
@@ -30,9 +32,8 @@ def check_answer(event):
 
 
 def play(event=None):
+    """Estrae una nazione da indovinare e altre due nazioni casuali."""
     global nations, to_guess
-
-    select("#message-container").style.display = "none"
 
     shuffle(nations)  # Mescola tutte le nazioni
     answers = nations[:3]  # Prende le prime tre nazioni come possibili risposte
@@ -45,6 +46,7 @@ def play(event=None):
     for i, nation in enumerate(answers):
         select("#answer-button" + str(i + 1)).innerText = nation
 
+    select("#message-container").style.display = "none"
     select("#loading-button").style.display = "none"
     select("#main-container").style.display = "block"
 

@@ -16,11 +16,11 @@ def set_answer_buttons(enabled):
 
 def check_answer(event):
     """Controlla se l'utente ha premuto sul pulsante corretto e un messaggio di feedback."""
-    user_choice = event.srcElement  # Sorgente dell'evento, es, "button-answer1"
+    user_choice = event.srcElement  # Sorgente dell'evento, es, "answer-button1"
     set_answer_buttons(False)
 
     if user_choice.innerText == to_guess:  # Controlla la scelta dell'utente
-        message = f"Risposta esatta!\n{to_guess}!"
+        message = f"Risposta esatta!\n{to_guess.strip()}!"
         icon_filename = "./images/true.svg"
     else:
         message = f"Risposta sbagliata!\nLa risposta esatta era {to_guess}"
